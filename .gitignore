@@ -1,0 +1,116 @@
+############################
+# Maven
+############################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+############################
+# Java
+############################
+*.class
+*.log
+*.ctxt
+hs_err_pid*
+
+############################
+# IntelliJ IDEA
+############################
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+############################
+# VS Code
+############################
+.vscode/
+.history/
+
+############################
+# Eclipse
+############################
+.project
+.classpath
+.settings/
+.factorypath
+
+############################
+# NetBeans
+############################
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+############################
+# OS files
+############################
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+############################
+# Logs
+############################
+logs/
+*.log
+
+############################
+# Coverage / Reports
+############################
+coverage/
+jacoco/
+jacoco.exec
+*.exec
+
+############################
+# Test artifacts
+############################
+surefire-reports/
+failsafe-reports/
+
+############################
+# Temporary / backup files
+############################
+*~
+*.swp
+*.tmp
+*.bak
+*.orig
+
+############################
+# Environment / secrets
+############################
+.env
+.env.*
+*.local
+*.secret
+
+############################
+# Build tools
+############################
+.gradle/
+gradle-app.setting
+.gradle.kts
+
+############################
+# Lombok
+############################
+lombok.config.local
+
+############################
+# Misc
+############################
+.idea_modules/
+.recommenders/
+.cache/
