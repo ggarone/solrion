@@ -6,7 +6,7 @@ design principles, and contribution rules.
 
 --------------------------------------------------------------------
 
-Building the project
+## Building the project
 
 To build the entire project, run:
 
@@ -20,7 +20,7 @@ This builds all modules:
 
 --------------------------------------------------------------------
 
-Project structure
+## Project structure
 
 Module                     Description
 -------------------------  -----------------------------------------------
@@ -33,7 +33,7 @@ The solrion-core module must remain transport- and framework-agnostic.
 
 --------------------------------------------------------------------
 
-Design principles
+## Design principles
 
 When contributing, please follow these principles:
 
@@ -41,14 +41,14 @@ When contributing, please follow these principles:
 - Validate inputs eagerly and explicitly
 - Avoid reflection-heavy or implicit "magic"
 - Keep Solr protocol mapping explicit and correct
-- Favor composition and visitor patterns over inheritance
+- Favor composition using OOP design patterns over inheritance
 - Avoid leaking transport, framework, or runtime concerns into solrion-core
 - Public APIs should be predictable, stable, and explicit
 - Escape hatches (rawOptions, rawParams) are allowed, but should not be the default
 
 --------------------------------------------------------------------
 
-Commit messages (IMPORTANT)
+## Commit messages (IMPORTANT)
 
 This project strictly follows the Conventional Commits specification:
 https://www.conventionalcommits.org/
@@ -85,7 +85,7 @@ Not allowed:
 
 --------------------------------------------------------------------
 
-Breaking changes
+## Breaking changes
 
 Breaking changes must be explicitly declared.
 
@@ -101,7 +101,7 @@ Using a footer:
 
 --------------------------------------------------------------------
 
-Pull requests
+## Pull requests
 
 - Keep pull requests focused and minimal
 - Prefer multiple small commits over a single large commit
@@ -110,7 +110,7 @@ Pull requests
 
 --------------------------------------------------------------------
 
-Issues
+## Issues
 
 When reporting bugs or requesting features, please include:
 
