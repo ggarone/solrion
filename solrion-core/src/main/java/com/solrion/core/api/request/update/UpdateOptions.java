@@ -1,6 +1,6 @@
 package com.solrion.core.api.request.update;
 
-/** Options common to perBatchUpdate operations. */
+/** Options common to update operations. */
 public record UpdateOptions(
     Boolean commit,
     Boolean softCommit,

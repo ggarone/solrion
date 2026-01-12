@@ -13,7 +13,7 @@ public final class HttpAdapter {
   public static String toPathSegment(ClientOperation operation) {
     return switch (operation) {
       case SELECT -> "select";
-      case ADD, DELETE, COMMIT -> "perBatchUpdate";
+      case ADD, DELETE, COMMIT -> "update";
     };
   }
 

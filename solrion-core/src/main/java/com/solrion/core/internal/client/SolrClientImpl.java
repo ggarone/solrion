@@ -37,7 +37,7 @@ public final class SolrClientImpl implements SolrClient {
   public SolrClientImpl(SolrHttpTransport transport, SolrClientOptions options) {
     this.transport = Validate.notNull(transport, "transport");
     this.observer = ClientObservers.get();
-    this.clientOptions = Validate.notNull(options, "perBatchUpdate");
+    this.clientOptions = Validate.notNull(options, "clientOptions");
     this.codec = Validate.notNull(options.codec(), "codec");
     this.paramsMapper = new SolrParamsMapper(SolrDialectTranslator.INSTANCE, codec);
     this.envelopeMapper = new UpdateEnvelopeMapper(SolrDialectTranslator.INSTANCE);
@@ -167,7 +167,7 @@ public final class SolrClientImpl implements SolrClient {
     try {
       return codec.decode(body, SolrUpdateResponse.class);
     } catch (Exception e) {
-      throw new SolrCodecException("Failed decoding Solr perBatchUpdate result", e.getCause());
+      throw new SolrCodecException("Failed decoding Solr update result", e.getCause());
     }
   }
 

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/// Builds JSON bodies for Solr perBatchUpdate handler.
+/// Builds JSON bodies for Solr update handler.
 ///
 ///
-/// The perBatchUpdate handler supports JSON commands:
+/// The update handler supports JSON commands:
 ///  - add
 ///  - delete
 ///  - commit

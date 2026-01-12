@@ -53,7 +53,7 @@ public final class RequestBuilders {
     return new CommitRequestBuilder().collection(collection);
   }
 
-  // --- perBatchUpdate builders --------------------------------------------------
+  // --- update builders --------------------------------------------------
 
   public static final class AddDocumentRequestBuilder
       extends UpdateRequestBuilder<AddDocumentRequestBuilder> {
