@@ -1,0 +1,4 @@
+* text=auto eol=lf
+
+*.java diff=java
+*.md diff=markdown
