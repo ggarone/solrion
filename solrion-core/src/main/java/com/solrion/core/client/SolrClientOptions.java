@@ -10,27 +10,21 @@ import lombok.experimental.Accessors;
 @Builder
 public class SolrClientOptions {
 
-    String defaultCollection;
+  String defaultCollection;
 
-    @Builder.Default
-    SolrCodec codec = SolrCodec.json();
+  @Builder.Default SolrCodec codec = SolrCodec.json();
 
-    @Builder.Default
-    String basePath = "/solr";
+  @Builder.Default String basePath = "/solr";
 
-    @Builder.Default
-    boolean failOnSolrError = false;
+  @Builder.Default boolean failOnSolrError = false;
 
-    @Builder.Default
-    boolean alwaysPostFormForSelect = false;
+  @Builder.Default boolean alwaysPostFormForSelect = false;
 
-    @Builder.Default
-    boolean selectPostFormOnThresholdExceeded = false;
+  @Builder.Default boolean selectPostFormOnThresholdExceeded = false;
 
-    @Builder.Default
-    int selectPostFormThresholdBytes = 2000;
+  @Builder.Default int selectPostFormThresholdBytes = 2000;
 
-    public static SolrClientOptions defaultOptions() {
-        return SolrClientOptions.builder().build();
-    }
+  public static SolrClientOptions defaultOptions() {
+    return SolrClientOptions.builder().build();
+  }
 }

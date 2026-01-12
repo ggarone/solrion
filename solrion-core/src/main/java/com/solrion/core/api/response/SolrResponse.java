@@ -1,14 +1,15 @@
 package com.solrion.core.api.response;
 
 public interface SolrResponse {
-    SolrResponseHeader header();
-    SolrError error();
+  SolrResponseHeader header();
 
-    default boolean hasError() {
-        return error() != null;
-    }
+  SolrError error();
 
-    default boolean isSuccess() {
-        return header() != null && header().status() != null && header().status() == 0;
-    }
+  default boolean hasError() {
+    return error() != null;
+  }
+
+  default boolean isSuccess() {
+    return header() != null && header().status() != null && header().status() == 0;
+  }
 }

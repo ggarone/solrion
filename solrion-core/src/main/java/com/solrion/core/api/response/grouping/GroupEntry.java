@@ -10,15 +10,13 @@ import lombok.experimental.Accessors;
 @Value
 public class GroupEntry {
 
-    Object value;
-    DocsResult docsResult;
+  Object value;
+  DocsResult docsResult;
 
-    @JsonCreator
-    public GroupEntry(
-            @JsonProperty("groupValue") Object value,
-            @JsonProperty("doclist") DocsResult docsResult
-    ) {
-        this.value = value;
-        this.docsResult = docsResult;
-    }
+  @JsonCreator
+  public GroupEntry(
+      @JsonProperty("groupValue") Object value, @JsonProperty("doclist") DocsResult docsResult) {
+    this.value = value;
+    this.docsResult = docsResult;
+  }
 }

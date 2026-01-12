@@ -1,10 +1,9 @@
 package com.solrion.core.internal.protocol.envelope;
 
-import com.solrion.core.api.types.SolrDocument;
 import com.solrion.core.api.request.update.*;
-import com.solrion.core.query.SolrDialectTranslator;
+import com.solrion.core.api.types.SolrDocument;
 import com.solrion.core.internal.Validate;
-
+import com.solrion.core.query.SolrDialectTranslator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,39 +18,39 @@ import java.util.Map;
 ///
 public final class UpdateEnvelopeMapper {
 
-    private final SolrDialectTranslator translator;
+  private final SolrDialectTranslator translator;
 
-    public UpdateEnvelopeMapper(SolrDialectTranslator translator) {
-        this.translator = Validate.notNull(translator, "translator");
+  public UpdateEnvelopeMapper(SolrDialectTranslator translator) {
+    this.translator = Validate.notNull(translator, "translator");
+  }
+
+  public Map<String, Object> toAddEnvelope(AddDocumentsRequest req) {
+    Validate.notNull(req, "req");
+
+    List<Object> docs = new ArrayList<>();
+    for (SolrDocument d : req.documents()) {
+      if (d == null) {
+        continue;
+      }
+      docs.add(d.fields());
     }
 
-    public Map<String, Object> toAddEnvelope(AddDocumentsRequest req) {
-        Validate.notNull(req, "req");
+    return Map.of("add", docs);
+  }
 
-        List<Object> docs = new ArrayList<>();
-        for (SolrDocument d : req.documents()) {
-            if (d == null) continue;
-            docs.add(d.fields());
-        }
+  public Map<String, Object> toDeleteByIdEnvelope(DeleteByIdRequest req) {
+    Validate.notNull(req, "req");
 
-        return Map.of("add", docs);
-    }
+    List<String> ids = req.ids().stream().filter(id -> !Validate.isBlank(id)).toList();
 
-    public Map<String, Object> toDeleteByIdEnvelope(DeleteByIdRequest req) {
-        Validate.notNull(req, "req");
+    return Map.of("delete", ids);
+  }
 
-        List<String> ids = req.ids().stream()
-                .filter(id -> !Validate.isBlank(id))
-                .toList();
+  public Map<String, Object> toDeleteByQueryEnvelope(DeleteByQueryRequest req) {
+    Validate.notNull(req, "req");
+    String q = translator.render(req.query());
+    Validate.require(!Validate.isBlank(q), "deleteByQuery queries rendered to blank");
 
-        return Map.of("delete", ids);
-    }
-
-    public Map<String, Object> toDeleteByQueryEnvelope(DeleteByQueryRequest req) {
-        Validate.notNull(req, "req");
-        String q = translator.render(req.query());
-        Validate.require(!Validate.isBlank(q), "deleteByQuery queries rendered to blank");
-
-        return Map.of("delete", Map.of("queries", q));
-    }
+    return Map.of("delete", Map.of("queries", q));
+  }
 }

@@ -5,7 +5,7 @@ import com.solrion.core.query.Expr;
 
 public record GroupByFunc(Expr func) implements GroupingTarget {
 
-    public GroupByFunc {
-        Validate.notNull(func, "func");
-    }
+  public GroupByFunc {
+    Validate.notNull(func, "func");
+  }
 }

@@ -1,20 +1,23 @@
 package com.solrion.core.api.types;
 
 public enum RangeInclude {
-    LOWER("lower"), UPPER("upper"), EDGE("edge"), ALL("all");
+  LOWER("lower"),
+  UPPER("upper"),
+  EDGE("edge"),
+  ALL("all");
 
-    private final String value;
+  private final String value;
 
-    RangeInclude(String value) {
-        this.value = value;
-    }
+  RangeInclude(String value) {
+    this.value = value;
+  }
 
-    public String value() {
-        return value;
-    }
+  public String value() {
+    return value;
+  }
 
-    @Override
-    public String toString() {
-        return value;
-    }
+  @Override
+  public String toString() {
+    return value;
+  }
 }

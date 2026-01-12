@@ -1,16 +1,16 @@
 package com.solrion.core.api.request;
 
 public enum ResponseFormat {
-    JSON("json"),
-    XML("xml");
+  JSON("json"),
+  XML("xml");
 
-    private final String wt;
+  private final String wt;
 
-    ResponseFormat(String wt) {
-        this.wt = wt;
-    }
+  ResponseFormat(String wt) {
+    this.wt = wt;
+  }
 
-    public String wt() {
-        return wt;
-    }
+  public String wt() {
+    return wt;
+  }
 }
