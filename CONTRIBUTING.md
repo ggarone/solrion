@@ -85,7 +85,7 @@ Not allowed:
 
 --------------------------------------------------------------------
 
-## Breaking changes
+### Breaking changes
 
 Breaking changes must be explicitly declared.
 
