@@ -30,7 +30,7 @@ public final class SolrJsonCodec implements SolrCodec {
   public String encode(Object value) {
     Objects.requireNonNull(value, "data");
     try {
-      return DEFAULT_MAPPER.writeValueAsString(value);
+      return mapper.writeValueAsString(value);
     } catch (JsonProcessingException e) {
       throw new SolrCodecException("Failed to encode data as JSON", e);
     }
@@ -41,7 +41,7 @@ public final class SolrJsonCodec implements SolrCodec {
     Objects.requireNonNull(json, "json");
     Objects.requireNonNull(type, "type");
     try {
-      return DEFAULT_MAPPER.convertValue(json, type);
+      return mapper.convertValue(json, type);
     } catch (Exception e) {
       throw new SolrCodecException("Failed to decode JSON", e);
     }
@@ -52,7 +52,7 @@ public final class SolrJsonCodec implements SolrCodec {
     Objects.requireNonNull(json, "json");
     Objects.requireNonNull(type, "type");
     try {
-      return DEFAULT_MAPPER.readValue(json, type);
+      return mapper.readValue(json, type);
     } catch (Exception e) {
       throw new SolrCodecException("Failed to decode JSON", e);
     }
